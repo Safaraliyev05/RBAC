@@ -55,3 +55,7 @@ coverage.xml
 
 # Claude Code tooling
 .claude/
+.docxvenv
+Safaraliyev_Sardor.docx
+Safaraliyev_Sardor_TEMPLATE_BACKUP.docx
+SECURITY.md
