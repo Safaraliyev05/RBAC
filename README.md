@@ -202,13 +202,13 @@ docker compose up --build
 # backend → http://localhost:8000   frontend → http://localhost:8080
 ```
 
-### Container images (GitHub Actions → GHCR)
+### Container images (GitHub Actions → Docker Hub)
 
-`.github/workflows/docker-build.yml` builds and pushes both images to the GitHub Container
-Registry on every push to `main`:
+`.github/workflows/docker-build.yml` builds and pushes both images to Docker Hub on every
+push to `main` (requires repo secrets `DOCKERHUB_USERNAME` and `DOCKERHUB_TOKEN`):
 
-- `ghcr.io/safaraliyev05/rbac-backend:latest`
-- `ghcr.io/safaraliyev05/rbac-frontend:latest`
+- `safaral1yev05/rbac-backend:latest`
+- `safaral1yev05/rbac-frontend:latest`
 
 ### Kubernetes / k3s via Helm
 
@@ -244,7 +244,7 @@ kubectl apply -f argocd/application.yaml
 | Workflow | Trigger | Does |
 |---|---|---|
 | `ci.yml` | push / PR | Backend `manage.py check` + migrations + `pytest`; frontend lint + build |
-| `docker-build.yml` | push to `main` | Build & push backend/frontend images to GHCR |
+| `docker-build.yml` | push to `main` | Build & push backend/frontend images to Docker Hub |
 | Argo CD | Git change | Sync the Helm chart to the k3s cluster (prune + self-heal) |
 
 ## Security
