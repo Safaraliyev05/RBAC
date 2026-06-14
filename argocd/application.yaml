@@ -12,7 +12,7 @@ spec:
   project: default
   source:
     repoURL: https://github.com/Safaraliyev05/RBAC.git
-    targetRevision: main
+    targetRevision: master
     path: rbac
   destination:
     server: https://kubernetes.default.svc
