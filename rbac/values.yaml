@@ -90,7 +90,7 @@ postgres:
 
 ingress:
   enabled: true
-  className: nginx
+  className: traefik
   annotations: {}
   hosts:
     - host: rbac.example.com
